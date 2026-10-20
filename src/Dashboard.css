@@ -1,0 +1,164 @@
+/* Paleta Neumórfica */
+:root {
+  --bg-color: #e0e5ec; /* Cinza super claro/azulado - Essencial para o efeito */
+  --text-main: #4a5568;
+  --text-muted: #a0aec0;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  
+  /* Cores Suaves para não quebrar a estética */
+  --ele-color: #4b7bec;
+  --ela-color: #fc5c65;
+  --success-color: #20bf6b;
+  --danger-color: #eb3b5a;
+}
+
+/* O fundo da página precisa ser exatamente a mesma cor do --bg-color */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Principal */
+.neu-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 30px;
+  background: var(--bg-color);
+  /* Sombra saltando da tela */
+  box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+}
+
+.neu-title {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Botões Genéricos (Saltados) */
+.neu-btn {
+  border: none;
+  outline: none;
+  background: var(--bg-color);
+  color: var(--text-main);
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+}
+
+/* Quando clica, o botão afunda */
+.neu-btn:active {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+}
+
+/* Estado Ativo dos Perfis (Afundados com cor) */
+.neu-btn.active-ele {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+  color: var(--ele-color);
+}
+.neu-btn.active-ela {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+  color: var(--ela-color);
+}
+
+/* Abas (Container afundado) */
+.neu-tabs {
+  display: flex;
+  padding: 8px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  background: var(--bg-color);
+  box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+}
+
+/* Aba Individual */
+.neu-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+/* Aba Ativa (Salta para fora do container afundado) */
+.neu-tab.active {
+  color: var(--text-main);
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+/* Cartões (Progresso) */
+.neu-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--bg-color);
+  box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Inputs e Textareas (Afundados na tela) */
+.neu-form-group {
+  margin-bottom: 20px;
+}
+
+.neu-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.9em;
+  padding-left: 5px;
+}
+
+.neu-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: var(--bg-color);
+  padding: 16px;
+  border-radius: 15px;
+  color: var(--text-main);
+  font-size: 1em;
+  box-sizing: border-box;
+  box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+  transition: all 0.2s ease;
+}
+
+.neu-input:focus {
+  box-shadow: inset 7px 7px 14px var(--shadow-dark), inset -7px -7px 14px var(--shadow-light);
+}
+
+/* Caixa de Refeição Livre */
+.neu-toggle-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  background: var(--bg-color);
+  box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+}
+
+/* Botão Salvar (Destaque sutil) */
+.neu-btn-save {
+  width: 100%;
+  margin-top: 10px;
+  padding: 18px;
+  color: var(--success-color);
+  font-size: 1.1em;
+}
+.neu-btn-save:disabled {
+  color: var(--text-muted);
+}
