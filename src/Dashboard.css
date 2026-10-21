@@ -242,3 +242,119 @@
 .toggle-switch:checked::after {
   transform: translateX(24px);
 }
+
+/* =========================================
+   NOVOS ESTILOS: SWIPES, PERFIL E MODAIS
+========================================= */
+
+/* Container de Arraste (Swipe) */
+.swipe-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
+  background: var(--bg-color);
+}
+
+.swipe-actions {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  z-index: 0;
+}
+.swipe-actions .delete-action { color: var(--danger); }
+.swipe-actions .edit-action { color: var(--primary); }
+
+.swipe-content {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-color);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-out;
+}
+
+/* Modal de Detalhes da Refeição/Tarefa */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.recipe-box {
+  background: var(--bg-color);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+  padding: 15px;
+  border-radius: 15px;
+  margin: 15px 0;
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+/* Grid do Perfil */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: var(--bg-color);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.stat-box.highlight {
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Histórico e Uploads */
+.upload-area {
+  border: 2px dashed var(--text-muted);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+.gallery-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px var(--shadow-dark);
+}
